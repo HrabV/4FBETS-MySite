@@ -47,7 +47,8 @@ export const NewsAdd = () => {
     if (canSave) {
       try {
         setAddRequestStatus("pending");
-        pac(addNewNews, { title, body, image });
+        pac(addNewNews, { title, body, image, createdAt });
+        setCreatedAt();
         clearState();
       } catch (err) {
         console.error("Failed to save the post: ", err);
